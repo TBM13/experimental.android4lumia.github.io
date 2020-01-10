@@ -3,6 +3,7 @@
   <head>
 
     <script lang="text/javascript" src="./assets/js/api.github.js"></script>
+    <script lang="text/javascript" src="./assets/js/home.js"></script>
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
       <script>
@@ -14,26 +15,6 @@
     {% endif %}
     <meta charset="UTF-8">
     <title>Android4Lumia</title> 
-    <script>
-      var bStatus = false;
-
-      function bMenuToggle() {
-        var bMenu = document.getElementById("bPanel");
-        var content = document.getElementById("content");
-        var pageheader = document.getElementById("pageheader");
-        document.getElementById("bBtn").classList.toggle("change");
-        if(!bStatus) {
-          bMenu.className += " opened";
-          content.setAttribute("onclick", "bMenuToggle()");
-          pageheader.setAttribute("onclick", "bMenuToggle()");
-        } else {
-          bMenu.className = "panel-wrap";
-          content.removeAttribute("onclick");
-          pageheader.removeAttribute("onclick");
-        }
-        bStatus = !bStatus;
-      }
-    </script>
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:Bold' rel='stylesheet' type='text/css'>
 {% seo %}
@@ -72,6 +53,8 @@
       {{ content }}
       
       <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/_OW88UTTDug" frameborder="0" allowfullscreen</iframe</div>
+      
+      <div id="orgMembersContainer"/>
     </main>
   </body>
 </html>
