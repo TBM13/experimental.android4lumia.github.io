@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 ---
 
 >**Your warranty is now void.**
