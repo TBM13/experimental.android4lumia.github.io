@@ -18,3 +18,14 @@ function bMenuToggle() {
     bStatus = !bStatus;
 }
 //Burger menu end
+
+function addOrgMembersAvatar() {
+    "use strict";
+    var containerElem = document.getElementById("orgMembersContainer");
+    var orgMembersAvatar = getOrgMembersAvatarURL(await getOrgMembersList("android4lumia"));
+    orgMembersAvatar.forEach(function(item){
+        var avatarImage = document.createElement("img");
+        avatarImage.setAttribute("src", item);
+        containerElem.appendChild(avatarImage);
+    });
+}
