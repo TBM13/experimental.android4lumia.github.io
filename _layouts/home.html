@@ -23,7 +23,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
-  <body>
+  <body onload="addOrgMembersAvatar();">
     <header class="tnb">
       <div class="bButtonContainer" id="bBtn" onclick="bMenuToggle()">
         <div class="bar1"></div>
