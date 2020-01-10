@@ -9,5 +9,7 @@ layout: home
 >before flashing anything. YOU are choosing to make these modifications on your own, and if 
 >you point the finger at us for messing up your device, we will laugh at you.
 
+<div id="orgMembersContainer" onload="addOrgMembersAvatar()"/>
+
 # Instructions video
 ______________
