@@ -19,7 +19,7 @@ function bMenuToggle() {
 }
 //Burger menu end
 
-function addOrgMembersAvatar() {
+async function addOrgMembersAvatar() {
     "use strict";
     var containerElem = document.getElementById("orgMembersContainer");
     var orgMembersAvatar = getOrgMembersAvatarURL(await getOrgMembersList("android4lumia"));
