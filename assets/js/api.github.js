@@ -23,7 +23,7 @@ async function apicall(url) {
 function getPropertyFromArray(array, property) {
     "use strict";
     var propertiesArray = []; 
-	array.forEach(function(item){
+    array.forEach(function(item){
         propertiesArray.push(item[property]);
     });
     return propertiesArray;
