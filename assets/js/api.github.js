@@ -20,6 +20,15 @@ async function apicall(url) {
     return prms;
 }
 
+function getPropertyFromArray(array, property) {
+    "use strict";
+    var propertiesArray = []; 
+	array.forEach(function(item){
+        propertiesArray.push(item[property]);
+    });
+    return propertiesArray;
+}
+
 async function getOrgMembersList(org) {
     "use strict";
     return await apicall("https://api.github.com/orgs/" + org + "/members");
@@ -27,19 +36,10 @@ async function getOrgMembersList(org) {
 
 function getOrgMembersAvatarURL(membersList) {
     "use strict";
-    membersList = membersList.split('\n');
-    var membersAvatar = [];
-    for(var i = 0; i < membersList.length; i++) {
-      if (membersList[i].contains("avatar_url"))
-      {
-        var memberAvatarURL = membersList[i].remove(0, membersList[i].lastIndexOf(":") + 2);
-        memberAvatarURL = memberAvatarURL.remove(memberAvatarURL.length - 2, 2);
-        console.log(memberAvatarURL);
-        membersAvatar.push(memberAvatarURL);
-      }
-    }
+    return getPropertyFromArray(membersList, "avatar_url");
 }
 
 function getOrgMembersUsername(membersList) {
     "use strict";
+    return getPropertyFromArray(membersList, "login");
 }
